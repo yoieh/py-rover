@@ -1,6 +1,18 @@
 
 A simpel Asteroid rover control system.
 
+## Installation
+
+just install with pip
+
+
+## Usage
+
+Edit data/input.txt to set diffrent input commands
+
+## Testing
+
+run $ `python3 -m pytest` in the root directory
 
 ## Todo list
 
