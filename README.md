@@ -5,10 +5,10 @@ A simpel Asteroid rover control system.
 ## Todo list
 
 
-- [ ] **Three lined input from file**
-    - [ ] First line: cordinats to upper right corner
-    - [ ] Second line: rovers starting position and direction
-    - [ ] Third line: commands
+- [x] **Three lined input from file**
+    - [x] First line: cordinats to upper right corner
+    - [x] Second line: rovers starting position and direction
+    - [x] Third line: commands
 - [ ] **Define the grid on the asteroid**
     - [ ] Cordinat system
     - [ ] Max grid size 100 X 100
@@ -19,8 +19,8 @@ A simpel Asteroid rover control system.
     - [ ] If it falls off the grid it outputs: "I fell off!"
 
 - [ ] Bonus
-    - [ ] **unit tests**
-        - [ ]: test input file
+    - [/] **unit tests**
+        - [x]: test input file
         - [ ]: test grid generation
         - [ ]: test rover movment
     - [ ] **obstacles and collision detection**
