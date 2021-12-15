@@ -28,4 +28,5 @@ def test_generate_obstacles():
         if grid.grid[i] == 1:
             count += 1
 
+    # this can be less than inputed obstacles if random pick the same coordinat twice
     assert count <= obstacles
