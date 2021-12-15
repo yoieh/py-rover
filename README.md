@@ -21,9 +21,9 @@ run $ `python3 -m pytest` in the root directory
     - [x] First line: cordinats to upper right corner
     - [x] Second line: rovers starting position and direction
     - [x] Third line: commands
-- [ ] **Define the grid on the asteroid**
-    - [ ] Cordinat system
-    - [ ] Max grid size 100 X 100
+- [x] **Define the grid on the asteroid**
+    - [x] Cordinat system
+    - [x] Max grid size 100 X 100
 - [ ] Define rover
     - [ ] Takes commands from file input
     - [ ] Can start from any cordinats inside of the grid
