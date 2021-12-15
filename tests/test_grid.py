@@ -28,4 +28,4 @@ def test_generate_obstacles():
         if grid.grid[i] == 1:
             count += 1
 
-    assert count == obstacles
+    assert count <= obstacles
