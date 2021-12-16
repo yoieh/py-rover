@@ -21,10 +21,20 @@ def test_can_start_from_any_position():
     assert rover.direction == 'S'
 
 
-def test_cant_start_from_invalid_position():
+def test_cant_start_from_invalid_position_outside_of_grid():
     grid = Grid(5, 5)
     with pytest.raises(SystemExit) as pytest_wrapped_e:
         Rover(grid, -1, 0, 'N')
+    assert pytest_wrapped_e.type == SystemExit
+    assert pytest_wrapped_e.value.code == 1
+
+
+def test_cant_start_from_invalid_position_on_obstacle():
+    grid = Grid(5, 5)
+    grid.grid = [1, 1, 1, 1]
+
+    with pytest.raises(SystemExit) as pytest_wrapped_e:
+        Rover(grid, 0, 0, 'N')
     assert pytest_wrapped_e.type == SystemExit
     assert pytest_wrapped_e.value.code == 1
 
@@ -74,6 +84,23 @@ def test_will_fall_off_grid_when_moving_forward():
     rover = Rover(grid, 0, 0, 'N')
     rover.path = [(rover.x, rover.y, rover.direction)]
     command = 'M'
-    
-    assert rover.simulate_command(command) ==  False
-    
+
+    assert rover.simulate_command(command) == False
+
+
+def test_will_end_up_at_calculated_position():
+    grid = Grid(6, 6)
+    rover = Rover(grid, 0, 0, 'S')
+    commands = ['M', 'M', 'M', 'M']
+
+    rover.simulate_run_rover(commands)
+
+    assert rover.path == [[0, 0, 'S'], [0, 1, 'S'],
+                          [0, 2, 'S'], [0, 3, 'S'], [0, 4, 'S']]
+    assert rover.calculated_end_position == [0, 4, 'S']
+
+    rover.run_rover()
+
+    assert rover.x == rover.calculated_end_position[0]
+    assert rover.y == rover.calculated_end_position[1]
+    assert rover.direction == rover.calculated_end_position[2]

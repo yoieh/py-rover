@@ -134,13 +134,13 @@ class Rover:
             return False
 
     def calculate_end_position(self, commands):
-        self.path = [(self.x, self.y, self.direction)]
+        self.path = [[self.x, self.y, self.direction]]
         for command in commands:
             self.simulate_command(command)
         return self.get_last_position()
 
     def calculate_path(self, commands):
-        self.path = [(self.x, self.y, self.direction)]
+        self.path = [[self.x, self.y, self.direction]]
         for command in commands:
             if self.simulate_command(command) == False:
                 # TODO: try to calculate a new path of commands
