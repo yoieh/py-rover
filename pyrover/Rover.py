@@ -6,6 +6,17 @@ class Rover:
         self.direction = direction
         self.path = []
 
+        self.validate_rover_starting_position()
+
+    def validate_rover_starting_position(self):
+        if(self.check_out_of_bounds(self.x, self.y)):
+            print("Rover: Cant start out side of grid, I will fall out!")
+            exit(1)
+
+        if(self.check_obstacle(self.x, self.y)):
+            print("Rover: I cant start on a obstacle!")
+            exit(1)
+
     def simulate_run_rover(self, commands):
         # first of get the end position
         self.calculated_end_position = self.calculate_end_position(commands)
