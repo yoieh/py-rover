@@ -85,16 +85,18 @@ class Rover:
         next_direction = last_position[2]
 
         if command == 'M':
-            if(self.check_obstacle()):
-                return False
-            if(self.check_out_of_bounds()):
-                print("Rover: I will fall out!")
-                print(self.x, self.y, self.direction)
-                return False
-
             new_move = self.simulate_move()
             next_x += new_move[0]
             next_y += new_move[1]
+
+            if(self.check_obstacle(next_x, next_y)):
+                return False
+
+            if(self.check_out_of_bounds(next_x, next_y)):
+                print("Rover: I will fall out!")
+                print(next_x, next_y, next_direction)
+                return False
+
         elif command == 'L':
             next_direction = self.simulate_turn_left()
         elif command == 'R':
@@ -106,16 +108,16 @@ class Rover:
         self.path.append([next_x, next_y, next_direction])
         return True
 
-    def check_obstacle(self):
-        if self.grid.grid[self.y * self.grid.width + self.x] == 1:
+    def check_obstacle(self, x, y):
+        if self.grid.grid[y * self.grid.width + x] == 1:
             return True
         else:
             return False
 
-    def check_out_of_bounds(self):
-        if self.x < 0 or self.x > self.grid.width - 1:
+    def check_out_of_bounds(self, x, y):
+        if x < 0 or x > self.grid.width - 1:
             return True
-        elif self.y < 0 or self.y > self.grid.height - 1:
+        elif y < 0 or y > self.grid.height - 1:
             return True
         else:
             return False
