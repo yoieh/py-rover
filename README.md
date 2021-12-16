@@ -28,20 +28,20 @@ run $ `python3 -m pytest` in the root directory
 - [x] **Define the grid on the asteroid**
     - [x] Cordinat system
     - [x] Max grid size 100 X 100
-- [ ] Define rover
-    - [ ] Takes commands from file input
-    - [ ] Can start from any cordinats inside of the grid
-    - [ ] Outputs the final position and direction of the rover
-    - [ ] If it falls off the grid it outputs: "I fell off!"
+- [x] **Define rover**
+    - [x] Takes commands from file input
+    - [x] Can start from any cordinats inside of the grid
+    - [x] Outputs the final position and direction of the rover
+    - [x] If it falls off the grid it outputs: "I fell off!"
 
-- [ ] Bonus
-    - [/] **unit tests**
+- [/] Bonus
+    - [x] **unit tests**
         - [x]: test input file
         - [x]: test grid generation
-        - [ ]: test rover movment
+        - [x]: test rover movment
     - [/] **obstacles and collision detection**
         - [x]: generate grid with obstacles
-        - [ ]: rover needs to scan the next move and check for obstacles
-        - [ ]: rover can find new path
+        - [x]: rover needs to scan the next move and check for obstacles
+        - [-]: rover can find new path
 
-    - [ ] **Keep it simpel**
+    - [?] **Keep it simpel**
