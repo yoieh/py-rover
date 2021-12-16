@@ -34,11 +34,11 @@ run $ `python3 -m pytest` in the root directory
     - [x] Outputs the final position and direction of the rover
     - [x] If it falls off the grid it outputs: "I fell off!"
 
-- [ ] Bonus
-    - [/] **unit tests**
+- [/] Bonus
+    - [x] **unit tests**
         - [x]: test input file
         - [x]: test grid generation
-        - [ ]: test rover movment
+        - [x]: test rover movment
     - [/] **obstacles and collision detection**
         - [x]: generate grid with obstacles
         - [x]: rover needs to scan the next move and check for obstacles
