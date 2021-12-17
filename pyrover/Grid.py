@@ -20,13 +20,5 @@ class Grid:
         for i in range(obstacles):
             self.grid[random.randint(0, self.width * self.height - 1)] = 1
 
-    def print_as_grid(self, rover):
-        for i in range(self.height):
-            for j in range(self.width):
-                if rover.x == j and rover.y == i:
-                    print("R", end=" ")
-                elif rover.calculated_end_position[0] == j and rover.calculated_end_position[1] == i:
-                    print("X", end=" ")
-                else:
-                    print(self.grid[i * self.width + j], end=" ")
-            print()
+    def get_cell(self, x, y):
+        return self.grid[y * self.width + x]
